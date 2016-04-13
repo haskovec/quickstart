@@ -69,6 +69,14 @@ public class ExampleService {
         }
     }
 
+
+    @Transactional
+    public void testRollback() {
+        System.out.println("testRollback");
+        jdbc.execute("insert into example values (2, 'test2')");
+        throw new RuntimeException("throw an exception to see if this is rolled back");
+    }
+
     public int checkRecord() {
         Integer count = jdbc.queryForObject("select count(*) from example", Integer.class);
         System.out.println("check in the database (count = " + count + ")");

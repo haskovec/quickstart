@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.jboss.narayana.quickstarts.springboot</groupId>
-	<artifactId>spring-boot-jta</artifactId>
+	<groupId>org.jboss.narayana.quickstarts.springboot-jpa</groupId>
+	<artifactId>springboot-jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-jta</name>
-	<description>Quickstarts: JBTM and Spring Boot - JTA Example</description>
+	<name>Spring Boot JPA Test</name>
+	<description>Quickstart for Spring Boot with JPA and JTA</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -21,6 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
+
 		<jboss-logging.version>3.1.2.GA</jboss-logging.version>
 		<narayana.version>5.3.2.Final</narayana.version>
 		<jboss-transaction-spi.version>7.1.1.Final</jboss-transaction-spi.version>
@@ -30,11 +31,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		
 		<dependency>
@@ -85,13 +90,13 @@
 			<artifactId>jboss-transaction-api_1.1_spec</artifactId>
 			<version>${jboss.spec.javax.transaction.version}</version>
 		</dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-dbcp2</artifactId>
-            <version>2.1.1</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
 
-    </dependencies>
+	</dependencies>
 	
 	<build>
 		<plugins>
